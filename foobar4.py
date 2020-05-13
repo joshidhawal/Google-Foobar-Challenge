@@ -17,11 +17,11 @@ def solution(x, y):
             generation=generation+(m-f)
             break
         if (m>f):
-            m=m-f
+            generation+=m/f
+            m=m%f
         else:
-            f=f-m
-        generation+=1
-        #print 'm:',m,'f:',f
+            generation+=f/m
+            f=f%m
         if(m<1 or f<1):
             generation=0
             break
@@ -32,7 +32,7 @@ def solution(x, y):
     
     return returnString
 
-x='100000000000000000000000000000000000000000000000000000000'
-y='999999999999'
+x='4'
+y='7'
 result = solution(x,y)
 print result
